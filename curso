@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Completo de HTML</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #00539C;
+            border-bottom: 2px solid #00539C;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f0f4f8;
+            padding: 10px;
+            border-left: 5px solid #007ACC;
+            font-size: 1em;
+            overflow-x: auto;
+        }
+        .exercise {
+            background-color: #eef;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #007ACC;
+        }
+        button {
+            background-color: #007ACC;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005FA3;
+        }
+        .interactive-section {
+            background-color: #e3f2fd;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .interactive-section h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Curso Completo de HTML para Principiantes y Avanzados</h1>
+</header>
+
+<main>
+
+    <!-- Módulo 1: Introducción a HTML -->
+    <section>
+        <h2>1. Introducción a HTML</h2>
+        <p>HTML (HyperText Markup Language) es el lenguaje estándar utilizado para estructurar y mostrar contenido en la web. A lo largo de las décadas, ha evolucionado para soportar una amplia gama de funcionalidades que mejoran la experiencia del usuario.</p>
+
+        <h3>Características clave de HTML5</h3>
+        <ul>
+            <li>Soporte para multimedia (audio y video) sin necesidad de plugins externos.</li>
+            <li>Introducción de etiquetas semánticas como <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, etc.</li>
+            <li>Soporte para APIs de HTML5 como geolocalización, almacenamiento local, y mucho más.</li>
+            <li>Mejoras en el manejo de gráficos y animaciones con <code>&lt;canvas&gt;</code> y <code>&lt;svg&gt;</code>.</li>
+        </ul>
+
+        <h3>Ejercicio Interactivo</h3>
+        <div class="interactive-section">
+            <h3>Prueba Interactiva</h3>
+            <p>Modifica el siguiente código HTML básico para personalizar el título y el texto de la página.</p>
+            <textarea id="intro-code" rows="8" style="width: 100%;">&lt;h1&gt;Bienvenido a mi primera página&lt;/h1&gt;&lt;p&gt;Este es un texto de prueba.&lt;/p&gt;</textarea>
+            <button onclick="updateIntroPreview()">Actualizar Vista</button>
+            <h3>Vista Previa</h3>
+            <iframe id="intro-preview" style="width: 100%; height: 150px; border: 1px solid #ddd;"></iframe>
+        </div>
+
+        <script>
+            function updateIntroPreview() {
+                var code = document.getElementById('intro-code').value;
+                var iframe = document.getElementById('intro-preview');
+                iframe.src = 'data:text/html;charset=utf-8,' + encodeURIComponent(code);
+            }
+        </script>
+
+        <h3>Ejercicio para Visual Studio Code:</h3>
+        <div class="exercise">
+            <p>Crea un archivo HTML en Visual Studio Code llamado <code>introduccion.html</code>. Añade un título y un párrafo que describa qué esperas aprender en este curso de HTML. Abre el archivo en tu navegador.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 2: Estructura de un Documento HTML -->
+    <section>
+        <h2>2. Estructura de un Documento HTML</h2>
+        <p>Un documento HTML tiene una estructura básica que incluye las etiquetas <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, y <code>&lt;body&gt;</code>. Es fundamental entender cómo se organizan los diferentes elementos.</p>
+
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página HTML&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Encabezado Principal&lt;/h1&gt;
+    &lt;p&gt;Este es un párrafo de ejemplo.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h3>Ejercicio de Estructura</h3>
+        <div class="exercise">
+            <p>Crea un documento HTML en Visual Studio Code que contenga la estructura básica descrita anteriormente. Asegúrate de incluir el título y un párrafo con una breve descripción. Abre el archivo en tu navegador.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 3: Encabezados, Párrafos y Texto -->
+    <section>
+        <h2>3. Encabezados, Párrafos y Texto</h2>
+        <p>En HTML, el contenido textual se organiza en encabezados (<code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>), párrafos (<code>&lt;p&gt;</code>), y estilos como negrita y cursiva.</p>
+
+        <h3>Encabezados</h3>
+        <p>Existen seis niveles de encabezados en HTML, desde <code>&lt;h1&gt;</code> hasta <code>&lt;h6&gt;</code>. El nivel más alto, <code>&lt;h1&gt;</code>, es el título principal de la página, mientras que <code>&lt;h6&gt;</code> es el más pequeño.</p>
+
+        <pre>
+&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo Secundario&lt;/h2&gt;
+&lt;h3&gt;Subtítulo Menor&lt;/h3&gt;
+        </pre>
+
+        <h3>Ejercicio de Encabezados</h3>
+        <div class="exercise">
+            <p>Crea un documento en Visual Studio Code que utilice los seis niveles de encabezados para organizar el contenido de tu página. Explica tu experiencia con HTML en diferentes niveles de encabezados.</p>
+        </div>
+
+        <h3>Texto en Negrita y Cursiva</h3>
+        <p>El texto puede estilizarse usando las etiquetas <code>&lt;b&gt;</code> (negrita) y <code>&lt;i&gt;</code> (cursiva).</p>
+        <pre>
+&lt;b&gt;Este texto está en negrita&lt;/b&gt;
+&lt;i&gt;Este texto está en cursiva&lt;/i&gt;
+        </pre>
+
+        <h3>Actividad Interactiva: Modificar Estilo de Texto</h3>
+        <div class="interactive-section">
+            <h3>Prueba Interactiva</h3>
+            <p>Modifica el siguiente código para cambiar el estilo del texto.</p>
+            <textarea id="text-code" rows="8" style="width: 100%;">&lt;p&gt;Este es un &lt;b&gt;texto en negrita&lt;/b&gt; y &lt;i&gt;este es en cursiva&lt;/i&gt;.&lt;/p&gt;</textarea>
+            <button onclick="updateTextPreview()">Actualizar Vista</button>
+            <h3>Vista Previa</h3>
+            <iframe id="text-preview" style="width: 100%; height: 150px; border: 1px solid #ddd;"></iframe>
+        </div>
+
+        <script>
+            function updateTextPreview() {
+                var code = document.getElementById('text-code').value;
+                var iframe = document.getElementById('text-preview');
+                iframe.src = 'data:text/html;charset=utf-8,' + encodeURIComponent(code);
+            }
+        </script>
+    </section>
+
+    <!-- Módulo 4: Listas en HTML -->
+    <section>
+        <h2>4. Listas en HTML</h2>
+        <p>Las listas se utilizan para organizar información de manera estructurada. Hay dos tipos principales: listas ordenadas y desordenadas.</p>
+
+        <h3>Listas Desordenadas</h3>
+        <pre>
+&lt;ul&gt;
+    &lt;li&gt;Elemento 1&lt;/li&gt;
+    &lt;li&gt;Elemento 2&lt;/li&gt;
+    &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+
+        <h3>Listas Ordenadas</h3>
+        <pre>
+&lt;ol&gt;
+    &lt;li&gt;Primer elemento&lt;/li&gt;
+    &lt;li&gt;Segundo elemento&lt;/li&gt;
+    &lt;li&gt;Tercer elemento&lt;/li&gt;
+&lt;/ol&gt;
+        </pre>
+
+        <h3>Ejercicio de Listas</h3>
+        <div class="exercise">
+            <p>Crea un documento HTML que contenga una lista ordenada y una desordenada con al menos tres elementos cada una. Abre el archivo en tu navegador para visualizarlo.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 5: Enlaces en HTML -->
+    <section>
+        <h2>5. Enlaces en HTML</h2>
+        <p>Los enlaces son fundamentales para la navegación en la web. Se crean usando la etiqueta <code>&lt;a&gt;</code>.</p>
+
+        <pre>
+&lt;a href="https://www.ejemplo.com"&gt;Visitar Ejemplo&lt;/a&gt;
+        </pre>
+
+        <h3>Ejercicio de Enlaces</h3>
+        <div class="exercise">
+            <p>Crea un documento HTML con al menos tres enlaces a diferentes sitios web. Asegúrate de que cada enlace se abra en una nueva pestaña utilizando el atributo <code>target="_blank"</code>.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 6: Imágenes y Multimedia en HTML -->
+    <section>
+        <h2>6. Imágenes y Multimedia en HTML</h2>
+        <p>Las imágenes se añaden a las páginas web utilizando la etiqueta <code>&lt;img&gt;</code>.</p>
+
+        <pre>
+&lt;img src="ruta/de/la/imagen.jpg" alt="Descripción de la imagen"&gt;
+        </pre>
+
+        <h3>Ejercicio de Imágenes</h3>
+        <div class="exercise">
+            <p>Inserta al menos dos imágenes en tu documento HTML, asegurándote de usar el atributo <code>alt</code> para describir cada imagen.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 7: Formularios en HTML -->
+    <section>
+        <h2>7. Formularios en HTML</h2>
+        <p>Los formularios permiten a los usuarios enviar datos a través de la web.</p>
+
+        <pre>
+&lt;form action="enviar.php" method="post"&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre" name="nombre"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h3>Ejercicio de Formularios</h3>
+        <div class="exercise">
+            <p>Crea un formulario sencillo que incluya campos para el nombre, correo electrónico y un botón de envío. Abre el archivo en tu navegador.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 8: Tablas en HTML -->
+    <section>
+        <h2>8. Tablas en HTML</h2>
+        <p>Las tablas se utilizan para presentar datos organizados en filas y columnas.</p>
+
+        <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Encabezado 1&lt;/th&gt;
+        &lt;th&gt;Encabezado 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 1, Columna 1&lt;/td&gt;
+        &lt;td&gt;Fila 1, Columna 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+
+        <h3>Ejercicio de Tablas</h3>
+        <div class="exercise">
+            <p>Crea una tabla en tu documento HTML con al menos dos filas y dos columnas. Asegúrate de incluir encabezados para cada columna.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 9: HTML Semántico -->
+    <section>
+        <h2>9. HTML Semántico</h2>
+        <p>HTML semántico se refiere al uso de etiquetas HTML que tienen un significado claro en cuanto a la estructura del contenido. Esto mejora la accesibilidad y el SEO.</p>
+
+        <pre>
+&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Título del Artículo&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;p&gt;Contenido del artículo.&lt;/p&gt;
+&lt;/article&gt;
+        </pre>
+
+        <h3>Ejercicio de HTML Semántico</h3>
+        <div class="exercise">
+            <p>Utiliza etiquetas semánticas para estructurar un pequeño artículo en tu documento HTML. Incluye un encabezado, un párrafo, y una sección de conclusión.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 10: Elementos Multimedia: Audio y Video -->
+    <section>
+        <h2>10. Elementos Multimedia: Audio y Video</h2>
+        <p>HTML5 permite integrar audio y video directamente en las páginas web sin necesidad de plugins externos.</p>
+
+        <h3>Audio</h3>
+        <pre>
+&lt;audio controls&gt;
+    &lt;source src="ruta/del/audio.mp3" type="audio/mpeg"&gt;
+    Tu navegador no soporta el elemento audio.
+&lt;/audio&gt;
+        </pre>
+
+        <h3>Video</h3>
+        <pre>
+&lt;video width="320" height="240" controls&gt;
+    &lt;source src="ruta/del/video.mp4" type="video/mp4"&gt;
+    Tu navegador no soporta el elemento video.
+&lt;/video&gt;
+        </pre>
+
+        <h3>Ejercicio de Multimedia</h3>
+        <div class="exercise">
+            <p>Agrega un archivo de audio y un video a tu documento HTML, asegurándote de incluir los controles para que el usuario pueda reproducirlos.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 11: Formularios en HTML -->
+    <section>
+        <h2>11. Formularios en HTML</h2>
+        <p>Los formularios son esenciales para la interacción del usuario. HTML ofrece diversas opciones de entrada.</p>
+
+        <pre>
+&lt;form&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre" name="nombre"&gt;
+    
+    &lt;label for="correo"&gt;Correo electrónico:&lt;/label&gt;
+    &lt;input type="email" id="correo" name="correo"&gt;
+    
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h3>Ejercicio de Formularios</h3>
+        <div class="exercise">
+            <p>Crea un formulario de registro que contenga campos para nombre, correo electrónico y una contraseña. Asegúrate de utilizar los tipos de entrada apropiados.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 12: Tablas en HTML -->
+    <section>
+        <h2>12. Tablas en HTML</h2>
+        <p>Las tablas son útiles para mostrar datos organizados.</p>
+
+        <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Nombre&lt;/th&gt;
+        &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Juan&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+
+        <h3>Ejercicio de Tablas</h3>
+        <div class="exercise">
+            <p>Crea una tabla con información sobre tus amigos o familiares. Incluye al menos tres columnas y tres filas.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 13: HTML Semántico -->
+    <section>
+        <h2>13. HTML Semántico</h2>
+        <p>Usar HTML semántico ayuda a mejorar la accesibilidad y SEO.</p>
+
+        <pre>
+&lt;header&gt;
+    &lt;h1&gt;Título de la Página&lt;/h1&gt;
+&lt;/header&gt;
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#seccion1"&gt;Sección 1&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+        </pre>
+
+        <h3>Ejercicio de HTML Semántico</h3>
+        <div class="exercise">
+            <p>Utiliza elementos semánticos para crear una estructura básica de una página que incluya un encabezado, navegación y secciones de contenido.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 14: Etiquetas y Funcionalidades Avanzadas de HTML5 -->
+    <section>
+        <h2>14. Etiquetas y Funcionalidades Avanzadas de HTML5</h2>
+        <p>HTML5 introduce varias funcionalidades avanzadas, como el manejo de gráficos y multimedia, así como APIs que enriquecen la experiencia del usuario.</p>
+
+        <h3>Ejemplo de Canvas</h3>
+        <pre>
+&lt;canvas id="miCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+        </pre>
+
+        <h3>Ejercicio de Canvas</h3>
+        <div class="exercise">
+            <p>Crea un lienzo utilizando la etiqueta <code>&lt;canvas&gt;</code> y dibuja una forma simple usando JavaScript.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 15: Metadatos y SEO (Optimización en Motores de Búsqueda) -->
+    <section>
+        <h2>15. Metadatos y SEO</h2>
+        <p>Los metadatos son esenciales para el SEO y ayudan a los motores de búsqueda a comprender el contenido de la página.</p>
+
+        <pre>
+&lt;meta name="description" content="Descripción de la página"&gt;
+        </pre>
+
+        <h3>Ejercicio de SEO</h3>
+        <div class="exercise">
+            <p>Asegúrate de incluir metadatos relevantes en tu documento HTML, como la descripción y palabras clave.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 16: Mejores Prácticas para la Accesibilidad Web (A11Y) -->
+    <section>
+        <h2>16. Mejores Prácticas para la Accesibilidad Web (A11Y)</h2>
+        <p>La accesibilidad web asegura que todas las personas, incluidas aquellas con discapacidades, puedan acceder a la información y funcionalidades del sitio.</p>
+
+        <h3>Ejercicio de Accesibilidad</h3>
+        <div class="exercise">
+            <p>Revisa tu documento HTML y asegúrate de que esté diseñado teniendo en cuenta las mejores prácticas de accesibilidad. Añade etiquetas <code>alt</code> a las imágenes y asegúrate de que los formularios sean accesibles.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 17: Interacción con CSS y JavaScript -->
+    <section>
+        <h2>17. Interacción con CSS y JavaScript</h2>
+        <p>HTML, CSS y JavaScript trabajan juntos para crear páginas web interactivas y visualmente atractivas.</p>
+
+        <pre>
+&lt;link rel="stylesheet" href="estilos.css"&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+        </pre>
+
+        <h3>Ejercicio de Integración</h3>
+        <div class="exercise">
+            <p>Integra un archivo CSS y un script JavaScript en tu documento HTML y prueba algunas interacciones simples.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 18: APIs y Elementos Dinámicos con HTML5 -->
+    <section>
+        <h2>18. APIs y Elementos Dinámicos con HTML5</h2>
+        <p>HTML5 introduce varias APIs que permiten la interacción dinámica con los usuarios.</p>
+
+        <h3>Ejemplo de Geolocalización</h3>
+        <pre>
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        console.log(position.coords.latitude, position.coords.longitude);
+    });
+}
+        </pre>
+
+        <h3>Ejercicio de API</h3>
+        <div class="exercise">
+            <p>Prueba la API de geolocalización en tu documento HTML y muestra la ubicación actual del usuario en la consola.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 19: Etiquetas Personalizadas con Web Components -->
+    <section>
+        <h2>19. Etiquetas Personalizadas con Web Components</h2>
+        <p>Web Components permite crear elementos personalizados que encapsulan su funcionalidad y estilo.</p>
+
+        <h3>Ejemplo de un Web Component</h3>
+        <pre>
+class MiComponente extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' }).innerHTML = '&lt;p&gt;Hola desde mi componente&lt;/p&gt;';
+    }
+}
+customElements.define('mi-componente', MiComponente);
+        </pre>
+
+        <h3>Ejercicio de Web Components</h3>
+        <div class="exercise">
+            <p>Crea tu propio Web Component y utilízalo en un documento HTML.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 20: Canvas y Gráficos en HTML5 -->
+    <section>
+        <h2>20. Canvas y Gráficos en HTML5</h2>
+        <p>La etiqueta <code>&lt;canvas&gt;</code> permite dibujar gráficos dinámicos en el navegador utilizando JavaScript.</p>
+
+        <h3>Ejemplo de Dibujo en Canvas</h3>
+        <pre>
+var canvas = document.getElementById('miCanvas');
+var contexto = canvas.getContext('2d');
+contexto.fillStyle = 'blue';
+contexto.fillRect(10, 10, 50, 50);
+        </pre>
+
+        <h3>Ejercicio de Canvas</h3>
+        <div class="exercise">
+            <p>Dibuja un gráfico simple utilizando la etiqueta <code>&lt;canvas&gt;</code> y JavaScript.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 21: Almacenamiento Local y Sesión con HTML5 -->
+    <section>
+        <h2>21. Almacenamiento Local y Sesión con HTML5</h2>
+        <p>HTML5 proporciona opciones para almacenar datos en el navegador utilizando localStorage y sessionStorage.</p>
+
+        <h3>Ejemplo de localStorage</h3>
+        <pre>
+localStorage.setItem('nombre', 'Juan');
+var nombre = localStorage.getItem('nombre');
+        </pre>
+
+        <h3>Ejercicio de Almacenamiento</h3>
+        <div class="exercise">
+            <p>Guarda y recupera datos utilizando localStorage en tu documento HTML.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 22: HTML5 Drag and Drop API -->
+    <section>
+        <h2>22. HTML5 Drag and Drop API</h2>
+        <p>La API de Drag and Drop permite a los usuarios arrastrar y soltar elementos dentro de una página web.</p>
+
+        <h3>Ejemplo de Drag and Drop</h3>
+        <pre>
+&lt;div id="drag" draggable="true"&gt;Arrástrame&lt;/div&gt;
+        </pre>
+
+        <h3>Ejercicio de Drag and Drop</h3>
+        <div class="exercise">
+            <p>Crea una funcionalidad de arrastrar y soltar en tu documento HTML usando la API de Drag and Drop.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 23: Geolocalización con HTML5 -->
+    <section>
+        <h2>23. Geolocalización con HTML5</h2>
+        <p>La API de geolocalización permite a las aplicaciones web acceder a la ubicación del usuario.</p>
+
+        <h3>Ejemplo de Geolocalización</h3>
+        <pre>
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        console.log(position.coords.latitude + ", " + position.coords.longitude);
+    });
+}
+        </pre>
+
+        <h3>Ejercicio de Geolocalización</h3>
+        <div class="exercise">
+            <p>Implementa la geolocalización en tu documento HTML y muestra la ubicación del usuario.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 24: Web Workers -->
+    <section>
+        <h2>24. Web Workers</h2>
+        <p>Los Web Workers permiten ejecutar scripts en segundo plano, lo que ayuda a mantener la interfaz de usuario fluida.</p>
+
+        <h3>Ejemplo de Web Worker</h3>
+        <pre>
+var worker = new Worker('worker.js');
+worker.onmessage = function(event) {
+    console.log(event.data);
+};
+        </pre>
+
+        <h3>Ejercicio de Web Workers</h3>
+        <div class="exercise">
+            <p>Crea un Web Worker que realice una tarea en segundo plano y envíe un mensaje a la página principal.</p>
+        </div>
+    </section>
+
+    <!-- Módulo 25: Mejores Prácticas y Recursos Adicionales -->
+    <section>
+        <h2>25. Mejores Prácticas y Recursos Adicionales</h2>
+        <p>Es importante seguir las mejores prácticas en el desarrollo web. Aquí hay algunas recomendaciones y recursos adicionales:</p>
+        <ul>
+            <li>Valida tu HTML utilizando el <a href="https://validator.w3.org/">Validador de W3C</a>.</li>
+            <li>Consulta la <a href="https://developer.mozilla.org/es/docs/Web/HTML">documentación de MDN sobre HTML</a> para obtener información detallada.</li>
+            <li>Participa en comunidades como <a href="https://stackoverflow.com/">Stack Overflow</a> para resolver dudas y aprender de otros.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Curso HTML Informática Montequinto</p>
+    </footer>
+</article>
+</body>
+</html>
